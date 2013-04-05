@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+
+{% block title %}{{ SITENAME }} - Articles by {{ author }}{% endblock %}
+{% block content_title %}
+<h1><a href="/{{ author.url }}">Articles by {{ author }}</a></h1>
+{% endblock %}
+

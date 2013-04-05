@@ -1,0 +1,114 @@
+{#- Macros -#}
+{% macro article_date(article) -%}
+
+<abbr class="published" title="{{ article.date.isoformat() }}">
+    <noscript>{{ article.date.strftime('%A, %B %d %Y at %H:%m%p') }}</noscript>
+    <script>document.write(aza.timeSince("{{ article.date.isoformat() }}"));</script>
+</abbr>
+
+{%- endmacro %}
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset="utf-8" />
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        {% if TAG_FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+        {% endif %}
+        {% if TAG_FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+        {% endif %}
+
+        <link href="http://fonts.googleapis.com/css?family=Ubuntu:bold" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% assets
+            filters="less,cssmin",
+            output="css/main.min.css",
+
+            "css/pygments.css",
+            "css/test.less" %}
+        <link rel="stylesheet" href="/{{ ASSET_URL }}">
+        {% endassets %}
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        {% assets
+            filters="uglifyjs",
+            output="js/main.min.js",
+
+            "js/main.js" %}
+        <script src="/{{ ASSET_URL }}"></script>
+        {% endassets %}
+	{% endblock head %}
+</head>
+
+<body class="home">
+    <div class="container">
+        <nav class="row text-center">
+            <div class="span2">
+                <a class="toplink" href="/about/">About</a>
+            </div>
+            <div class="span2">
+                <a class="toplink" href="/author/andrew-z-allen.html">Blog</a>
+            </div>
+            <div class="span4" id="logo">
+                <a href="{{ SITEURL }}">
+                    <span class="a1">A</span>
+                    <span class="z">Z</span>
+                    <span class="a2">A</span>
+                </a>
+            </div>
+            <div class="span2">
+                <a class="toplink" href="/work/">Work</a>
+            </div>
+            <div class="span2">
+                <a class="toplink" href="/contact/">Contact</a>
+            </div>
+        </nav><!-- /#banner -->
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="row social-links text-center">
+            {% if SOCIAL %}
+
+            <ul class="inline">
+            {% for name, icon, link in SOCIAL %}
+                <li>
+                    <a class="{{ icon }}" href="{{ link }}">
+                        {{name}}
+                    </a>
+                </li>
+            {% endfor %}
+            {% else %}
+                Social is off?
+            {% endif %}
+            </ul>
+        </footer><!-- /#contentinfo -->
+    </div>
+    <script>aza.main()</script>
+</body>
+</html>
+<!-- Special thanks to Roy Barber (http://roybarber.com) for providing so much inspiration for my site -->

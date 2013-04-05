@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="content">
+{% block content_title %}
+
+
+<div class="row">
+    <div class="span12">
+        <p class="hello text-center">Hi, I'm Andrew Z Allen a freelance software developer living in Denver, Colorado.</p>
+    </div>
+</div>
+
+<div class="row">
+    <h1><a href="/work/">Recent work</a></h1>
+</div>
+
+<div class="row">
+    <div class="span8 offset2 text-center">
+        <ul class="inline row clients">
+{% for article in articles_page.object_list if article.category == "work" %}
+            <li>
+                <span class="vertical-center">
+                    <a href="{{ article.url }}">
+                        <img src="{{ article.logo }}" />
+                    </a>
+                </span>
+            </li>
+            {%- if loop.index >= 2 %}{% break %}{% endif %}
+{% endfor -%}
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <h1><a href="/author/andrew-z-allen.html">Recent writing</a></h1>
+</div>
+{% endblock %}
+
+<div class="row">
+    <ol id="post-list" class="unstyled">
+{% for article in articles_page.object_list if
+        (not article.category == "work")
+    and (article.status == "published") %}
+        <li>
+            <article class="hentry">
+                <header> <h2 class="{% if not loop.first %}striped {% endif %}entry-title text-center"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h2> </header>
+                <footer class="post-info text-center">
+                    {% if article.author %}<address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>,{% endif %}
+                    {{ article_date(article) }}
+                </footer><!-- /.post-info -->
+                <div class="entry-content"> {{ article.summary }} <a href="{{ SITEURL }}/{{ article.url }}">[Read More]</a></div><!-- /.entry-content -->
+            </article>
+        </li>
+{% endfor %}
+    </ol><!-- /#posts-list -->
+</div>
+<!--{% include 'pagination.html' %}-->
+</section><!-- /#content -->
+{% endblock content %}

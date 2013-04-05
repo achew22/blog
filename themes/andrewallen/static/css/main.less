@@ -1,0 +1,307 @@
+// http://www.colorhunter.com/palette/827992
+@color1: #201B18;
+@color2: #7B9F10;
+@color3: #736B38;
+@color4: #FFFCF7;
+@color5: #DAB158;
+
+@base: @color2;
+@white: @color4;
+@base-font-size: 18px;
+
+/* Mixins */
+.transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+
+body {
+    background: @base;
+    font-family: 'Vollkorn', Georgia, Times, serif;
+
+    font-size: @base-font-size;
+    line-height: @base-font-size * 1.5;
+    color: @white;
+
+    width: 800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+// Hide mathjax when it is doing stuff
+/** /
+#MathJax_Message {
+    display:none
+}
+/**/
+
+.math, .math * {
+    color: @white;
+}
+
+.post-info {
+    text-align: center;
+    margin-bottom: 30px;
+    color: fade(@white, 75);
+}
+
+.published, .author {
+    font-size: @base-font-size * .75;
+}
+
+.author {
+    display: inline;
+}
+
+/*** Syntax Hilighting **/
+@codetransitiontime: .3s;
+.highlighttable {
+    border-spacing: 0px;
+    //padding: 10px;
+    .transition(all, @codetransitiontime, linear);
+    width: 40%;
+    margin-bottom: 40px;
+
+    .linenos {
+        .transition(all, @codetransitiontime, linear);
+        text-align: center;
+        padding: 0 5px 0 5px;
+        background: spin(@base, -10);
+    }
+
+    .code {
+        .transition(all, @codetransitiontime, linear);
+        padding: 0 25px 0 5px;
+        //background: fade(lighten(spin(@base, 90), 70), 20);
+        background: @color1;
+    }
+}
+
+.highlighttable:hover {
+    .transition(all, @codetransitiontime, linear);
+    width: 100%;
+}
+
+/*** END Syntax highlighting ***/
+
+
+
+.social-list, .social-list li {
+    display:inline;
+    list-style:none;
+}
+
+
+a {
+    color: @color4;
+    text-decoration:none;
+    .transition(all, @codetransitiontime, linear);
+}
+
+p a {
+    .transition(all, @codetransitiontime, linear);
+    color: fade(@white, 60);
+}
+
+p a:hover {
+    .transition(all, @codetransitiontime, linear);
+    color: @white;
+}
+
+#banner {
+    h1 * {
+        line-height: 27px;
+    }
+
+    a {
+        color: fade(@white, 60);
+    }
+    a:hover {
+        color: @white;
+    }
+
+    .a1 {
+        -moz-transform: rotate(-180deg); /* FF3.5+ */
+        -o-transform: rotate(-180deg); /* Opera 10.5 */
+        -webkit-transform: rotate(-180deg); /* Safari 3.1+, Chrome */
+        position: relative;
+        padding: 0;
+        margin: 0;
+        top: -18px;
+        left: 23px;
+        background: transparent;
+        display: inline-block;
+    }
+
+    .z {
+        margin: 0;
+        padding: 0;
+    }
+
+    .a2 {
+        position: relative;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        left: -26px;
+        top: 10px;
+        display: inline-block;
+    }
+
+    h1 a.toplink {
+        font-size: @base-font-size * 1.5;
+        padding: 0 5px;
+        margin: 0;
+        display:inline-block;
+    }
+}
+
+h1,h2,h3,h4,h5 {
+    font: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    @h1-font-size: @base-font-size * 2.5; // 2.5x the base font size seems good
+    font-size: @h1-font-size;
+    line-height: @h1-font-size * 1.5; // 50% padding on each row
+    height: @h1-font-size * .75; //* 50% of the line height = 1.5 * .5 = .75 /;
+
+    text-align: center;
+
+    * {
+        line-height: 80px;
+        background-color: @base;
+
+        padding: 0 65px;
+        margin: 0 auto;
+    }
+
+    color: @color4;
+    border-bottom: solid fade(@color4, 13) 1px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight:100;
+    text-align:center;
+}
+
+hr {
+    border: solid fade(@color4, 13) 1px;
+    margin-bottom: 40px;
+}
+
+
+// Transitions, YAY!
+h1,
+h2,
+small,
+img,
+p,
+input[type=text],
+input[type=email],
+textarea,
+input[type=submit] {
+    .transition(all, 0.5, ease-in);
+}
+
+
+// Define the social icons
+//@social-icon-size: 48px;
+@social-icon-size: @base-font-size * 2.5;
+@social-icon-padding: 10px;
+.social-links{
+    text-align: center;
+
+    h1 span {
+        //padding: 0 @social-icon-padding; // 0 @social-icon-padding;
+    }
+
+    .github {
+        background-image: url('/theme/images/iconmonstr-github-icon.svg');
+    }
+    .google-plus {
+        background-image: url('/theme/images/iconmonstr-google-plus-icon.svg');
+    }
+    .facebook {
+        background-image: url('/theme/images/iconmonstr-facebook-icon.svg');
+    }
+    .twitter {
+        background-image: url('/theme/images/iconmonstr-twitter-icon.svg');
+    }
+    a {
+        display: inline-block;
+        opacity: 0.6;
+        padding: 0;
+        text-indent: -9999px;
+        background-size: 100% 100%;//@social-icon-size @social-icon-size;
+        width: @social-icon-size;
+        height: @social-icon-size;
+    }
+
+    a:hover {
+        opacity: 1;
+    }
+}
+
+#post-list {
+    list-style:none;
+}
+
+.hello {
+    font-size: @base-font-size * 1.2;
+    margin-top: 70px;
+    text-align:center;
+}
+
+
+/*** Work logos ***/
+#work-list {
+    margin-top: 40px;
+    margin-bottom: -50px;
+    text-align: center;
+    display:inline-block;
+    list-style:none;
+
+    li {
+        float: left;
+        padding: 20px;
+        vertical-align:bottom;
+    }
+
+    img {
+        /**/
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        /**/
+    }
+}
+/*** END Work logos ***/
+
+/*** Share ***/
+.share p {
+    text-align: center;
+}
+/*** END Share ***/
+
+.entry-title {
+    padding-top:20px;
+}
+
+.center {
+    text-align:center;
+}
+
+.clear {clear:both};

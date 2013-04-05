@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+{% if article.type == "picture" %}
+  {% if article.promoted == "true" %} THIS IS A PROMOTED ARTICLE {% endif %}
+  This is a picture post
+{% else %}
+  <section id="content" class="body">
+    <header>
+      <h1 class="entry-title">
+
+        <a href="{{ article.url }}" rel="bookmark"
+           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+   {% import 'translations.html' as translations with context %}
+   {{ translations.translations_for(article) }}
+    </header>
+    <footer class="post-info text-center">
+      {% if article.author %}
+      <address class="vcard author">
+        <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>,
+      {% endif %}
+      {{ article_date(article) }}
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      {{ article.content }}
+    </div><!-- /.entry-content -->
+
+    {% if article.metadata.parts_articles and article.metadata.parts_articles|length > 1 %}
+      <hr />
+      <div class="article-parts">
+        <h3>More parts in this series</h3>
+        <ol>
+        {% for part_article in article.metadata.parts_articles %}
+            {% if part_article == article %}
+                <li>
+                    <strong>{{ part_article.title }}</strong>
+                </li>
+            {% else %}
+                <li>
+                    <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+    {% if article.related_posts and article.related_posts.length > 1 %}
+      <hr />
+      <div class="related">
+        <h3>Related Posts</h3>
+        <ul>
+        {% for related_post in article.related_posts %}
+            <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+  </section>
+{% endif %}
+
+{% block share %}
+  <section class="share">
+    <hr>
+    <div class="row text-center">
+      Think I'm awesome? You should <a href="https://twitter.com/intent/tweet?text=I%20just%20finished%20reading%20Andrew%20Z%20Allen's%20post%20on%20{{ article.title|replace("&nbsp;","%20") }}.%20You%20should%20check%20it%20out%20{{ SITEURL }}/{{ article.url }}&source=andrewzallen.com">tell your friends!</a> and <a href="https://twitter.com/intent/user?screen_name=achew22">follow me</a> on twitter <a href="https://twitter.com/achew22">@achew22</a>
+    </div>
+    <div class="row text-center">
+      Alternately, you can
+    </div>
+    <div class="row text-center">
+      <a href="https://twitter.com/intent/tweet?text=@achew22%20You%20are%20so%20wrong%20about%20{{ article.title|replace("&nbsp;","%20") }}&source=andrewzallen.com">Tell me why I'm stupid!</a>
+    </div>
+  </sction>
+{% endblock %}
+
+{% endblock %}

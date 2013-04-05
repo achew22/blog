@@ -1,0 +1,8 @@
+#pelican
+git+git://github.com/getpelican/pelican
+Markdown
+webassets
+rst2pdf
+typogrify
+cssmin
+feedparser

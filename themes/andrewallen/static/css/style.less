@@ -1,0 +1,330 @@
+/* Mixins */
+.transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+.hello {
+    margin-top: 45px;
+    font-size: @fontSizeHuge;
+    line-height: @fontSizeHuge * 1.75;
+    margin-bottom: 20px;
+}
+
+.share div {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    border: solid fade(@color4, 13) 1px;
+    margin-bottom: 20px;
+}
+
+// Define the social icons
+//@social-icon-size: 48px;
+@social-icon-size: @baseFontSize * 2.5;
+@social-icon-padding: 10px;
+.social-links{
+    border-bottom: solid fade(@color4, 13) 1px;
+    height: 33px;
+    line-height: 42.5px;
+    margin-bottom: 45px;
+
+    ul {
+        line-height: 40px;
+        padding: 0 35px;
+        display:inline-block;
+        background: @color2;
+    }
+
+    .github {
+        background-image: url('/theme/images/iconmonstr-github-icon.svg');
+    }
+    .google-plus {
+        background-image: url('/theme/images/iconmonstr-google-plus-icon.svg');
+    }
+    .facebook {
+        background-image: url('/theme/images/iconmonstr-facebook-icon.svg');
+    }
+    .twitter {
+        background-image: url('/theme/images/iconmonstr-twitter-icon.svg');
+    }
+    a {
+        .transition(all, @codetransitiontime, linear);
+        display: inline-block;
+        opacity: 0.6;
+        padding: 0;
+        text-indent: -9999px;
+        background-size: 100% 100%;//@social-icon-size @social-icon-size;
+        width: @social-icon-size;
+        height: @social-icon-size;
+    }
+
+    a:hover {
+        .transition(all, @codetransitiontime, linear);
+        opacity: 1;
+    }
+}
+
+/*** Syntax Hilighting **/
+.highlighttable {
+    border-spacing: 0px;
+    //padding: 10px;
+    .transition(all, @codetransitiontime, linear);
+    width: 40%;
+    margin-bottom: 40px;
+
+    .linenos {
+        .transition(all, @codetransitiontime, linear);
+        text-align: center;
+        padding: 0 5px 0 5px;
+        background: spin(@color2, -10);
+    }
+
+    .code {
+        .transition(all, @codetransitiontime, linear);
+        padding: 0 25px 0 5px;
+        //background: fade(lighten(spin(@color2, 90), 70), 20);
+        background: @color1;
+    }
+}
+
+.highlighttable:hover {
+    .transition(all, @codetransitiontime, linear);
+    width: 100%;
+}
+
+nav {
+    padding-top: 65px;
+}
+
+nav div a {
+    font-size: @fontSizeHuge;
+    color: @white;
+}
+
+
+h1 a, h2 a {
+    color: @white;
+}
+
+/* Transitions stuff */
+a {
+    .transition(all, @codetransitiontime, linear);
+    color: fade(@white, 60);
+}
+
+a:hover {
+    .transition(all, @codetransitiontime, linear);
+    color: @white;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.published, .author {
+    font-size: @fontSizeNormal;
+}
+
+.author {
+    display: inline;
+}
+
+h1, h2.striped {
+    @h1-font-size: 45px; // 2.5x the base font size seems good
+    font-size: @h1-font-size;
+    line-height: @h1-font-size * 1.5; // 50% padding on each row
+    height: @h1-font-size * .75; //* 50% of the line height = 1.5 * .5 = .75 /;
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    a {
+        line-height: 80px;
+        background-color: @color2;
+
+        padding: 0 65px;
+        margin: 0 auto;
+    }
+
+    color: @color4;
+    border-bottom: solid fade(@color4, 13) 1px;
+}
+
+#content footer {
+    margin-bottom: 45px;
+}
+
+
+// LOGO!
+#logo {
+    a {
+        font-size: 45px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .a1 {
+        -moz-transform: rotate(-180deg) scale(-1, 1); /* FF3.5+ */
+        -o-transform: rotate(-180deg) scale(-1, 1); /* Opera 10.5 */
+        -webkit-transform: rotate(-180deg) scale(-1, 1); /* Safari 3.1+, Chrome */
+        transform: rotate(-180deg) scale(-1, 1); /* Safari 3.1+, Chrome */
+        position: relative;
+        padding: 0;
+        margin: 0;
+        top: -18px;
+        left: 26.4px;
+        background: transparent;
+        display: inline-block;
+    }
+
+    .z {
+        margin: 0;
+        padding: 0;
+    }
+
+    .a2 {
+        -moz-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+        position: relative;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        left: -25.2px;
+        top: 10px;
+        display: inline-block;
+    }
+}
+
+// Math shouldn't be strange colors
+span.math {
+    color: @white;
+}
+
+// Alignment for ReST articles
+.align-left {
+    float: left;
+    margin-bottom: 40px;
+}
+
+.align-right {
+    float: right;
+    margin-bottom: 40px;
+}
+
+.align-center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 40px;
+}
+
+// Client logos on the front page
+
+.work, .clients {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    span {
+
+        height: 100px;
+        img {
+            max-width: (@gridColumnWidth * 4) + (@gridGutterWidth * 3) - 20px;
+        }
+    }
+}
+
+.about-andrew {
+    display: inline-block;
+    float: left;
+    margin-left: -150px;
+    padding: 20px 40px 20px;
+    width: 330px;
+}
+/*
+.vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+*/
+.work-list {
+
+    .client {
+        @client-work-list-max-height: 100px;
+        height: @client-work-list-max-height + 10;
+        margin-bottom: 20px;
+
+        span {
+            height: 100px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        span.description {
+            width: 360px;
+        }
+
+        a {
+            img {
+                max-width: 250px;
+                max-height: @client-work-list-max-height;
+            }
+        }
+    }
+
+    @client-work-list-img-padding: 20px;
+    @client-work-list-border-size: 10px;
+    .client.odd {
+        text-align:right;
+        padding-right: @client-work-list-img-padding;
+        border-right: solid fade(@color4, 13) @client-work-list-border-size;
+
+        span.description {
+            padding-left: 798px - 360px - 250px;
+        }
+
+        img {
+            margin-left: @client-work-list-img-padding;
+        }
+    }
+    .client.even {
+        text-align:left;
+        padding-left: @client-work-list-img-padding;
+        border-left: solid fade(@color4, 13) @client-work-list-border-size;
+
+        img {
+            margin-right: @client-work-list-img-padding;
+        }
+    }
+}
+
+// This can also be used for emphasis
+blockquote {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: solid fade(@color4, 13) 10px;
+
+    p {
+        // Styles pulled in from blockquote.p from bootstrap
+        font-size: 27.5px;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+
+    p.attribution {
+        text-align: right;
+    }
+}
