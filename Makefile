@@ -75,15 +75,16 @@ publish:
 	for FOLDER in $(PUBLISH_IGNORE_THEME_FOLDERS) ; do \
 	rm -rf $(OUTPUTDIR)/theme/$$FOLDER ; done
 
-ssh_upload: publish
+scp_upload: publish
 	rm $(OUTPUTDIR)/htpasswd
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
 beta:
 	make -e PUBLISHCONF=$(BETACONF) publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_BETA_TARGET_DIR)
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_BETA_TARGET_DIR)
 
-rsync_upload: publish
+ssh_upload: publish
+	rm $(OUTPUTDIR)/htpasswd
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR) $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
 dropbox_upload: publish
