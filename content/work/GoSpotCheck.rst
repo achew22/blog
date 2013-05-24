@@ -8,12 +8,15 @@ GoSpotCheck
 :date: 2012-08-13
 :languages: JavaScript, Java, Objective-C, Groovy
 :status: published
-:description: This is my description of the work
+:description: Full stack developer - Jack of all trades
 
-Working for `GoSpotCheck <http://gospotcheck.com>`_
+Working for `GoSpotCheck <http://gospotcheck.com>`_, I worked on everything they put out.
 
+ * Created a rich analytical backend that provided fast analysis of the clients data and made suggestions about what to improve
+ * Developed :abbr:`SPA (Single Page Application)` that provided instant access to all of the
+ * Mobile application for iOS and for Android
 
-I also developed the mobile application for iOS and for Android
+I wrote about what I built for them, check it out `here </programming/hello-world.html>`_.
 
 .. image:: /static/work/images/gospotcheck_ios.png
    :alt: Sample of the GoSpotCheck iOS application
@@ -24,12 +27,3 @@ I also developed the mobile application for iOS and for Android
    :alt: Sample of the GoSpotCheck android application
    :width: 50%
    :align: left
-
-
-..
-    .. code-block:: python
-        :linenos:
-
-        if (True == Bool(1)):
-            # What language is first
-            echo "Hello world"

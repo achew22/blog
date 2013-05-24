@@ -6,8 +6,8 @@ RevUpRender
 :author: Andrew Z Allen
 :logo: /static/work/images/revuprender.png
 :date: 2010-09-03
-:languages: Puppet
+:languages: Puppet, Python, PHP
 :status: published
-:description: My short description of this project
+:description: Providing infinite scalability to an up and coming cloud CAD Company
 
-Working for `RevUpRender <http://revuprender.com>`_ I worked on.
+For `RevUpRender <http://revuprender.com>`_ I developed software that allows architectural and mechanical design firms to run their CAD software in the cloud. Only minimal rendering happens locally with the unique hybridization techniques that I helped develop.

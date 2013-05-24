@@ -12,7 +12,7 @@ FullContact
 :status: published
 
 
-Working for `FullContact <https://fullcontact.com>`_ I built an `API client <https://github.com/fullcontact/fullcontact-api-python>`_ for.
+Working for `FullContact <https://fullcontact.com>`_ I built the Full Contact `API client <https://github.com/fullcontact/fullcontact-api-python>`_ for python.
 
 Code sample:
 

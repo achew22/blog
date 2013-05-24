@@ -13,10 +13,10 @@
    {% import 'translations.html' as translations with context %}
    {{ translations.translations_for(article) }}
    {% if article.description %}
-    <span>{{ article.description }}</span>
+    <div>{{ article.description }}</div>
    {% endif %}
    {% if article.languages %}
-    <span class="languages">Languages: {{ article.languages }}</span>
+    <div class="languages">Languages: {{ article.languages }}</div>
    {% endif %}
     </header>
     <div class="entry-content">
