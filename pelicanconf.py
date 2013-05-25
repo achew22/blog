@@ -26,7 +26,7 @@ STATIC_PATHS = ['images', 'work/images']
 PDF_GENERATOR = False
 
 # Typography
-TYPOGRIFY = True
+TYPOGRIFY = False
 
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
