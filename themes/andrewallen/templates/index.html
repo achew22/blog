@@ -39,7 +39,7 @@
 
 <div class="row">
     <ol id="post-list" class="unstyled">
-{% for article in articles_page.object_list if
+{% for article in articles_page.object_list|sort(attribute='date', reverse=True) if
         (not article.category == "work")
     and (article.status == "published") %}
         <li>
