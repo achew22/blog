@@ -13,7 +13,7 @@ GoSpotCheck
 :website: true
 :resume: true
 :web_description: Full stack developer, Jack of all trades
-:description: Worked on the GoSpotCheck iPhone and Android app as well as spearheaded a single page application, written using Google's Closure Library, that provided an analytics dashboard to their customers.
+:description: On a team of two engineers who developed the GoSpotCheck iPhone and Android app as well as spearheaded a single page application, written using Google's Closure Library, that provided an analytics dashboard to their customers.
 
 I worked on many projects for them.
 
