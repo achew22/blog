@@ -1,5 +1,5 @@
-#pelican
-git+git://github.com/getpelican/pelican
+pelican
+#git+git://github.com/getpelican/pelican
 Markdown
 webassets
 rst2pdf
