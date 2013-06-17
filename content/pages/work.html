@@ -1,17 +1,26 @@
 {% extends "base.html" %}
+
+
 {% block content %}
 
 <h1><a href=".">Work</a></h1>
 <ul class="work-list unstyled">
-{% for article in articles|sort(attribute='date')|reverse if article.category == "work" %}
+{% for article in articles|sort(attribute='date')|reverse if article.category == "work" and not article.website == "false" %}
+{% macro description() %}
+    {% if article.web_description %}
+        {{ article.web_description }}
+    {% else %}
+        {{ article.description }}
+    {% endif %}
+{% endmacro %}
     <li class="client {{ loop.cycle('even','odd') }}">
             <a href="{{ SITEURL }}/{{ article.url }}">
                 {% if loop.index % 2 == 0 %}
-                    <span class="description">{{ article.description }}</span>
+                    <span class="description">{{ description() }}</span>
                 {% endif %}
                 <span><img src="{{ article.logo }}" /></span>
                 {% if not loop.index % 2 == 0 %}
-                    <span class="description">{{ article.description }}</span>
+                    <span class="description">{{ description() }}</span>
                 {% endif %}
             </a>
     </li>
