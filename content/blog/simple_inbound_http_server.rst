@@ -7,7 +7,7 @@ Simple inbound HTTP server
 
 I wanted to show a webpage I've been toying with to a friend today.
 The project is in Django and I didn't want to take the time to deploy it to a permanent host like heroku.
-I know it is easy to do that, but I was just fealing lazy.
+I know it is easy to do that, but I was just feeling lazy.
 I came up with a cool trick today for doing exactly this.
 I have a server that I leave on 100% of the time.
 
