@@ -48,6 +48,9 @@ html: clean $(OUTPUTDIR)/index.html
 $(OUTPUTDIR)/%.html:
 	$(PELICAN) --debug $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
+$(OUTPUTDIR)/%.tex:
+	$(PELICAN) --debug $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
 clean:
 	find $(OUTPUTDIR) -mindepth 1 -delete
 
@@ -68,6 +71,9 @@ devserver-stop:
 
 publish:
 	$(PELICAN) -D $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+	make resume
+
 	# Now clean up assets that are temporary in the theme
 	for EXT in $(PUBLISH_IGNORE_THEME_EXTENSIONS) ; do \
 	find $(OUTPUTDIR)/theme -name "*.$$EXT" -mindepth 1 -delete ; done
@@ -97,4 +103,18 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload beta rsync_upload dropbox_upload ftp_upload github
+resume: $(OUTPUTDIR)/resume.tex
+	cat output/resume.tex | ssh achew22.com "rubber-pipe --into /tmp --pdf" > output/resume.pdf
+
+resume_old: $(OUTPUTDIR)/resume.tex
+	cat output/resume.tex | ssh achew22.com "\
+		TEMP=`mktemp -d /tmp/resumeXXXXXX`; \
+		mkdir \$${TEMP};\
+		ls \$${TEMP};\
+		touch \$${TEMP}/resume.tex ;\
+		cat - > \$${TEMP}/resume.tex; \
+		(cd \$${TEMP} && rubber --pdf \$${TEMP}/resume.tex); \
+		cp \$${TEMP}/resume.pdf /tmp/resume.pdf"
+	scp achew22.com:/tmp/resume.pdf output/resume.pdf
+
+.PHONY: html help clean regenerate serve devserver publish ssh_upload beta rsync_upload dropbox_upload ftp_upload github resume

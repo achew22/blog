@@ -20,7 +20,10 @@ FEED_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 # Static file list
-STATIC_PATHS = ['images', 'work/images']
+STATIC_PATHS = [
+    'images',
+    'work/images'
+]
 
 # Don't generate PDFs yet
 PDF_GENERATOR = False
@@ -37,47 +40,59 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 
 # Files To Copy
-FILES_TO_COPY = (('extras/robots.txt', 'robots.txt'),
-                 ('extras/htpasswd', 'htpasswd'),
-                 ('extras/favicon.ico', 'favicon.ico'))
+FILES_TO_COPY = (
+    ('extras/robots.txt', 'robots.txt'),
+    ('extras/htpasswd', 'htpasswd'),
+    ('extras/favicon.ico', 'favicon.ico')
+)
 
 # Files not to copy
-IGNORE_FILES = ['theme/css/*.less']
+IGNORE_FILES = [
+    'theme/css/*.less'
+]
 
 # Plugins
-PLUGINS = ['pelican.plugins.assets',
-           'pelican.plugins.multi_part',
-           'pelican.plugins.html_rst_directive',
-           #'pelican.plugins.related_posts'
-           ]
+PLUGIN_PATH = 'pelican-plugins'
+PLUGINS = [
+    'assets',
+    'multi_part',
+    'html_rst_directive',
+    'json',
+    #'pelican.plugins.related_posts'
+]
 
 # Related posts config
 RELATED_POSTS = {
-   'numentries': 2,
+    'numentries': 2,
 }
 
 DELETE_OUTPUT_DIRECTORY = True
 
-ASSET_CONFIG = (('closure_compressor_optimization', 'WHITESPACE_ONLY'),
-                ('less_bin', 'lessc'), )
+ASSET_CONFIG = (
+    ('closure_compressor_optimization', 'WHITESPACE_ONLY'),
+    ('less_bin', 'lessc'),
+)
 
 THEME = 'themes/andrewallen'
 
 # Blogroll
-LINKS =  (('My Employer', 'https://www.gospotcheck.com/'),
-          ('TechStars', 'http://www.techstars.com'),)
+LINKS = (
+    ('My Employer', 'https://www.gospotcheck.com/'),
+    ('TechStars', 'http://www.techstars.com'),
+)
 
 # Social widget
 SOCIAL = (
-            ('Twitter', 'twitter', 'https://twitter.com/achew22'),
-            ('GitHub', 'github', 'https://github.com/achew22'),
-            ('Google Plus', 'google-plus', 'https://plus.google.com/110942846399558932785/'),
-            ('Facebook', 'facebook', 'https://facebook.com/achew22'),
-          )
+    ('Twitter', 'twitter', 'https://twitter.com/achew22'),
+    ('GitHub', 'github', 'https://github.com/achew22'),
+    ('Google Plus', 'google-plus', 'https://plus.google.com/110942846399558932785/'),
+    ('Facebook', 'facebook', 'https://facebook.com/achew22'),
+)
 
 TEMPLATE_PAGES = {
-  'pages/404.html' : '404.html',
-  'pages/work.html': 'work/index.html'
+    'pages/404.html' : '404.html',
+    'pages/work.html': 'work/index.html',
+    'pages/resume.tex': 'resume.tex',
 }
 
 JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols']
