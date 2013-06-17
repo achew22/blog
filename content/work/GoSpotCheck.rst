@@ -6,11 +6,16 @@ GoSpotCheck
 :author: Andrew Z Allen
 :logo: /static/work/images/gsc.png
 :date: 2012-08-13
-:languages: JavaScript, Java, Objective-C, Groovy
+:enddate: 2013-01-27
+:position: Senior Software Developer
+:languages: JavaScript, Java, Objective-C, Groovy, Bash, Python, Ruby, CoffeeScript
 :status: published
-:description: Full stack developer - Jack of all trades
+:website: true
+:resume: true
+:web_description: Full stack developer, Jack of all trades
+:description: Worked on the GoSpotCheck iPhone and Android app as well as spearheaded a single page application, written using Google's Closure Library, that provided an analytics dashboard to their customers.
 
-Working for `GoSpotCheck <http://gospotcheck.com>`_, I worked on everything they put out.
+I worked on many projects for them.
 
  * Created a rich analytical backend that provided fast analysis of the clients data and made suggestions about what to improve
  * Developed :abbr:`SPA (Single Page Application)` that provided instant access to all of the

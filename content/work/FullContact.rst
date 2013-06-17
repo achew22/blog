@@ -1,16 +1,20 @@
-FullContact
-###########
+FullContact (formerly RainMaker)
+################################
 
 :template: work
 :category: work
 :author: Andrew Z Allen
 :logo: /static/work/images/fullcontact.svg
 :date: 2011-06-03
+:enddate: 2011-09-03
+:position: Contractor
 :languages: Python
-:description: Implement the python client for the FullContact API
+:description: For FullContact, I implemented the first iteration of their python client.
+:web_description: Implement the python client for the FullContact API.
 :workurl: https://github.com/fullcontact/fullcontact-api-python
 :status: published
-
+:resume: true
+:website: true
 
 Working for `FullContact <https://fullcontact.com>`_ I built the Full Contact `API client <https://github.com/fullcontact/fullcontact-api-python>`_ for python.
 

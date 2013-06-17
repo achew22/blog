@@ -1,14 +1,19 @@
 TechStars
-###########
+#########
 
 :template: work
 :category: work
 :author: Andrew Z Allen
 :logo: /static/work/images/techstars.png
 :date: 2011-05-03
+:enddate: 2011-09-05
+:position: HackStar
 :languages: Python, Ruby, JavaScript, Erlang, PHP, Java
 :status: published
-:description: Hired gun for the worlds best incubator
+:web_description: Hired gun for the world's best incubator.
+:description: Hired gun for the world's best start-up incubator. Provided substantial development assistance to 4 startups and additional assistance to 5 others
+:resume: true
+:website: true
 
 I was hired by `TechStars <http://techstars.com>`_ to be a `HackStar <http://techstars.com/hackstars>`_
 
