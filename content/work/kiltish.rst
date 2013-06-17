@@ -11,8 +11,9 @@ Kiltish Software
 :enddate: 2013-06-03
 :languages: Java
 :status: published
-:web_description: Provided next generation digital signage
-:description: For `Kiltish <http://kiltish.com>`_ in association with `Lucky Charm Productions <http://luckycharmproductions.com>`_, I created a Google TV app that provides marquee and showtime information to visitors at movie venues, concert halls, restaurants and anywhere else digital signage is used. The app, `Bright Display <http://luckycharmproductions.com/brightdisplay>`_, was developed for Google TV and allowed a movie theater company to replace their entire fleet of Mac Mini computers, saving the company thousands of dollars per deployment.
+:web_description: Provided next generation digital signage.
+:description: Created a Google TV app, Bright Display, that provides marquee and showtime information to visitors at movie venues, concert halls, restaurants and anywhere else digital signage is used.
+:description2: Allowed a movie theater company to replace their entire fleet of Mac Mini computers, saving the company thousands of dollars per deployment.
 :resume: true
 :website: true
 

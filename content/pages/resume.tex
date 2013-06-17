@@ -32,6 +32,9 @@
 \usepackage{calc}
 \usepackage{amsmath}
 
+% For multi column lists
+\usepackage{multicol}
+
 % This package helps LaTeX auto-hyphenate hyphenated words if you use
 % special hyphens. For example, bio\-/mimicry will properly hyphenate
 % ``mimicry'' if necessary.
@@ -352,7 +355,7 @@ Denver, CO 80237 USA}
 \parbox{\rcollength}{%
 \textit{Mobile:} +1-720-262-3874 \\
 \textit{E-mail:} \email{Me@AndrewZAllen.com}\\
-\textit{WWW:} \href{http://www.andrewzallen.com/work/}{AndrewZAllen.com}
+\textit{Web:} ~~ \href{http://www.andrewzallen.com/work/}{AndrewZAllen.com}
 }
 
 \end{tabular}
@@ -375,7 +378,7 @@ Denver, CO 80237 USA}
 {% for article in articles|sort(attribute='date')|reverse if article.category == "work" and article.resume == "true" %}
 
 {% if not loop.first %}
-\vspace{.05cm}
+\vspace{.1cm}
 {% endif %}
 
 \begin{minipage}[t]{\textwidth}
@@ -403,6 +406,12 @@ Denver, CO 80237 USA}
         {% if article.description2 %}
         \item {{ article.description2 }}
         {% endif %}
+        {% if article.description3 %}
+        \item {{ article.description3 }}
+        {% endif %}
+        {% if article.description4 %}
+        \item {{ article.description4 }}
+        {% endif %}
 
         \begin{innerlist}
             {% if article.extra %}
@@ -422,6 +431,46 @@ Denver, CO 80237 USA}
 
 {% raw %}
 
+\vspace{0.1cm}
+
+\section{Contributed Open Source Projects}
+
+\begin{innerlist}
+%\begin{bibsection}
+    \item \href{http://djangoproject.org}{Django Web Framework}.
+    \item \href{http://mythtv.org}{MythTV}.
+    \item \href{http://www.cakephp.org}{CakePHP Web Framework}.
+    \item \href{http://rhysbrettbowen.github.io/PlastronJS/}{PlastronJS (Google Closure Library Extension)}.
+    \item \href{https://github.com/gbin/err#readme}{Err IRC bot}.
+    \item \href{https://github.com/achew22/techstars-dashboard}{TechStars Dashboard [Creator]}.
+    \item \href{http://sourceforge.net/projects/rssatellite/}{RSSatelite [Creator]}.
+\end{innerlist}
+%\end{bibsection}
+
+\vspace{-0.1cm}
+
+\section{Languages}
+
+\vspace{-.4cm}
+\begin{multicols}{5}
+\begin{innerlist}
+    \item Python.
+    \item JavaScript.
+    \item Ruby.
+    \item Java.
+    \item Groovy.
+    \item PHP.
+    \item C.
+    \item C++.
+    \item Erlang.
+    \item Scala.
+    \item Puppet.
+    \item Bash.
+\end{innerlist}
+\end{multicols}
+
+\vspace{-0.6cm}
+
 \begin{minipage}[t]{\textwidth}
     \section{Education}
 
@@ -434,7 +483,7 @@ Denver, CO 80237 USA}
                  {Computer Science}, August 2010 to December 2012
             \begin{innerlist}
             \item Founder of ACM club.
-            \item Coach of 3 ACM International Collegiate Programming Contest teams.
+            \item Coach of three ACM International Collegiate Programming Contest teams.
             \item Member of a challenge team that solved three problems in the ACM International Collegiate Programming Contest, 2011.
 
             \end{innerlist}
@@ -452,30 +501,30 @@ Denver, CO 80237 USA}
             \begin{innerlist}
             \item Recipient of ``Outstanding research award'' from Computer Science Department, 2009.
             \item Recipient of ``Outstanding research award'' from Physics Department, 2010.
-            \item Computer Science Student of the year award, 2010.
+            \item Computer Science Student of the Year award, 2010.
             \end{innerlist}
     \end{outerlist}
 \end{minipage}
 
 \begin{minipage}[t]{\textwidth}
-    \section{Volunteer Work}
+    \section{Volunteer}
 
     \textbf{ \href{ http://www.binningfamilyfoundation.org }{ The Binning Family Foundation } }
 
     \begin{innerlist}
 
-        \item[] Volunteer rock climbing instructor for Redirections \\ (a program for troubled youth)  \hfill { September 2012 to Present } \\
+        \item[] Volunteer rock climbing instructor for the Redirections program \hfill { September 2012 to Present }
         \begin{innerlist}
-            \item Once a week, The Binning Foundation provides services to redirect the energies of at risk use through experiential education. They asked me to help facilitate these young adults during their transition back to a more traditional education system.
+            \item Once a week, The Binning Foundation provides services that redirect the energies of at-risk youth through experiential education. All of the participants have been expelled from school. I help these young adults transition back to a traditional education system.
         \end{innerlist}
 
         \vspace{0.1cm}
 
-        \item[] Volunteer System Administrator \hfill { December 2006 to Present } \\
+        \item[] Volunteer System Administrator \hfill { December 2006 to Present }
         \begin{innerlist}
-            \item Provide assistance in the maintenance and upkeep of digital systems.
+            \item Provide assistance in the maintenance and upkeep of hardware and software systems.
             \begin{innerlist}
-                \item[$-$] Developed software to help the foundation track their participants through many years of participation in their programs.
+                \item[$-$] Developed software to help the foundation track their participants through many years of participation in the foundation's programs.
                 \item[$-$] Maintain a storage cluster to allow the participants to keep portfolios.
             \end{innerlist}
         \end{innerlist}
@@ -483,35 +532,33 @@ Denver, CO 80237 USA}
     \end{innerlist}
 \end{minipage}
 
-% Add a little space to nudge next ``Ref'd Journal Publications'' marginpar
-% down to make room for tall ``Submitted Journal Publications''
-% marginpar. If there are enough submitted journal publications, this
-% space will not be needed (and should be removed).
-\vspace{0.1in}
-
-\section{Contributed Open Source Projects}
-
-\begin{innerlist}
-%\begin{bibsection}
-    \item \href{http://djangoproject.org}{Django Web Framework}.
-    \item \href{http://mythtv.org}{MythTV}.
-    \item \href{http://www.cakephp.org}{CakePHP Web Framework}.
-    \item \href{http://rhysbrettbowen.github.io/PlastronJS/}{PlastronJS (Google Closure Library Extension)}.
-    \item \href{https://github.com/gbin/err#readme}{Err IRC bot}.
-    \item \href{https://github.com/achew22/techstars-dashboard}{TechStars Dashboard [Creator]}.
-    \item \href{http://sourceforge.net/projects/rssatellite/}{RSSatelite [Creator]}.
-\end{innerlist}
-%\end{bibsection}
+\vspace{0.2cm}
 
 \section{Invited Talks}
 
 \begin{bibsection}
 
-    \item ``You suck at social networking but you don't have to,'' \href{http://visionpros.org/2013-navp-conference/2013-agenda/}{\emph{National Association of Vision Professionals} convention}, August, 2013.
+    \item ``You suck at social networking but you don't have to,'' \href{http://visionpros.org/2013-navp-conference/2013-agenda/}{\emph{National Association of Vision Professionals} convention}, August 2013.
 
 \end{bibsection}
 
-\vspace{0.2cm}
+\vspace{0.1cm}
+
+\section{Interests}
+
+\vspace{-.4cm}
+\begin{multicols}{2}
+\begin{innerlist}
+%\begin{bibsection}
+    \item Rock climbing.
+    \item Ice climbing.
+    \item Triad climbing.
+    \item Route setting.
+    \item Hiking.
+    \item Guitar.
+\end{innerlist}
+%\end{bibsection}
+\end{multicols}
 
 
 %\section{More Information}

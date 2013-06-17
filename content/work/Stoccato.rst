@@ -7,7 +7,9 @@ Stoccato
 :date: 2009-04-03
 :position: Co-Founder
 :languages: Python, Erlang, Java
-:description: Using distributed and fault tolerant design patterns as well as machine learning and traditional statistics, I built a system that listens to and then makes projections on intra-day trading in the NYSE and NASDAQ exchanges. This system spans four physical locations and is capable of making tens of thousands of trades per day.
+:description: Built a system that processes streaming live market data, makes projections, and generates intra-day trades in NYSE and NASDAQ-listed stocks.
+:description3: Used distributed and fault tolerant design patterns to allow multi-master homing.
+:description2: Used machine learning techniques and traditional statistics to arrive at these projections.
 :status: published
 :resume: true
 :website: false

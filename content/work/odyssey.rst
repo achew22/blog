@@ -9,7 +9,7 @@ Odyssey
 :logo: /static/work/images/odyssey.png
 :date: 2013-02-13
 :status: draft
-:description: My short description of this project
+:description: My short description of this project.
 :resume: true
 :website: true
 

@@ -11,7 +11,8 @@ TechStars
 :languages: Python, Ruby, JavaScript, Erlang, PHP, Java
 :status: published
 :web_description: Hired gun for the world's best incubator.
-:description: Hired gun for the world's best start-up incubator. Provided substantial development assistance to 4 startups and additional assistance to 5 others
+:description: Hired gun for the world's best start-up incubator.
+:description2: Provided substantial development assistance to 4 startups and additional assistance to 5 others.
 :resume: true
 :website: true
 

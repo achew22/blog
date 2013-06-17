@@ -9,8 +9,9 @@ FullContact (formerly RainMaker)
 :enddate: 2011-09-03
 :position: Contractor
 :languages: Python
-:description: For FullContact, I implemented the first iteration of their python client.
-:web_description: Implement the python client for the FullContact API.
+:web_description: For FullContact, I implemented the first iteration of their python client.
+:description: Implemented the Python client for FullContact's API.
+:description2: Programmers using this API can obtain enriched information about users.
 :workurl: https://github.com/fullcontact/fullcontact-api-python
 :status: published
 :resume: true

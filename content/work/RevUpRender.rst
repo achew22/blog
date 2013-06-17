@@ -11,7 +11,8 @@ RevUpRender
 :languages: C++, Puppet, Python, PHP
 :status: published
 :web_description: Providing infinite scalability cloud CAD Company
-:description: RevUpRender, a cloud CAD (Computer Aided Drafting) company, had built a successful SaaS product. Their product worked well and allowed their clients to burst rendering of complicated 3D models into the cloud. They were interested in expanding their business to create CAD thin clients to their customers. Together, we built a new system that would allow complete virtualization of CAD workstations as well as the low latency usage of these systems. We also designed this system to keep these virtual workstations inactive to keep costs low.
+:description: Built a system that allows complete, low-latency virtualization of CAD (Computer Aided Drafting) workstations.
+:description2: Designed a separate system that keeps these virtual workstations active only when in use to minimize costs.
 :resume: true
 :website: true
 
