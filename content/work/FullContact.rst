@@ -4,7 +4,7 @@ FullContact (formerly RainMaker)
 :template: work
 :category: work
 :author: Andrew Z Allen
-:logo: /static/work/images/fullcontact.svg
+:logo: /work/images/fullcontact.svg
 :date: 2011-06-03
 :enddate: 2011-09-03
 :position: Contractor

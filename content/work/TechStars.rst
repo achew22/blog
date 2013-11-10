@@ -4,7 +4,7 @@ TechStars
 :template: work
 :category: work
 :author: Andrew Z Allen
-:logo: /static/work/images/techstars.png
+:logo: /work/images/techstars.png
 :date: 2011-05-03
 :enddate: 2011-09-05
 :position: HackStar

@@ -6,7 +6,7 @@ Odyssey
 :position: Founder
 :author: Andrew Z Allen
 :languages: Scala, JavaScript, SQL, Objective-C, Java
-:logo: /static/work/images/odyssey.png
+:logo: /work/images/odyssey.png
 :date: 2013-02-13
 :status: draft
 :description: My short description of this project.

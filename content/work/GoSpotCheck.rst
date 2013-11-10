@@ -4,7 +4,7 @@ GoSpotCheck
 :template: work
 :category: work
 :author: Andrew Z Allen
-:logo: /static/work/images/gsc.png
+:logo: /work/images/gsc.png
 :date: 2012-08-13
 :enddate: 2013-01-27
 :position: Senior Software Developer
@@ -24,12 +24,12 @@ I worked on many projects for them.
 
 I wrote about what I built for them, check it out `here </programming/hello-world.html>`_.
 
-.. image:: /static/work/images/gospotcheck_ios.png
+.. image:: /work/images/gospotcheck_ios.png
    :alt: Sample of the GoSpotCheck iOS application
    :width: 50%
    :align: left
 
-.. image:: /static/work/images/gospotcheck_android.jpg
+.. image:: /work/images/gospotcheck_android.jpg
    :alt: Sample of the GoSpotCheck android application
    :width: 50%
    :align: left
