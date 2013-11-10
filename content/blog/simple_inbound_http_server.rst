@@ -16,7 +16,6 @@ I realized that I could use this server as a simple proxy and forward any web re
 Using SSH I created a reverse tunnel that made my localhost's 8000 port availble on the remote machine on port 1234.
 
 .. code-block:: bash
-    :linenos:
 
     ssh -R 1234:127.0.0.1:8000 ${HOST}
 
