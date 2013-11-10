@@ -15,7 +15,7 @@ My degree is in Computer Science from the `University Of Colorado <https://www.u
 
 In my spare time, I contribute back to the communities that I came from. For my alma mater, I consult with several professors to help improve their notes/homework to better prepare soon to be graduates. I volunteer with `The Binning Family Foundation <http://binningfoundation.org>`_ and `Littleton Public Schools <http://www.littletonpublicschools.net/>`_, working with students who have been expelled in an attempt to redirect their energies toward more productive endeavors. I'm an avid rock climber who tries to get on the wall 3-4 times a week and out in nature whenever possible.
 
-For that work thing, I consult with Denver based startups to help accelerate their success. If you're looking for someone to help your startup get further, faster, I'd love to talk to you.
+For that work thing, I consult with Denver based startups to help accelerate their success. If you're looking for someone to help your startup get further, faster, I'd love to talk to you. To make sure it only goes to me, sign it with my `public key </pgp/>`_.
 
 .. html::
 
