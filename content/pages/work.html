@@ -4,6 +4,38 @@
 {% block content %}
 
 <h1><a href=".">Work</a></h1>
+<div class="work-list">
+{% for article in articles|sort(attribute='date')|reverse if article.category == "work" and not article.website == "false" %}
+{% macro description() %}
+    {% if article.web_description %}
+        {{ article.web_description }}
+    {% else %}
+        {{ article.description }}
+    {% endif %}
+{% endmacro %}
+        <div class="row work-row">
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                {% if loop.index % 2 == 0 %}
+                    <div class="logo-left span3">
+                        <img src="{{ article.logo }}" />
+                    </div>
+                    <div class="description span9">
+                        <span class="description">{{ description() }}</span>
+                    </div>
+                {% endif %}
+                {% if not loop.index % 2 == 0 %}
+                    <div class="description span9">
+                        <span class="description">{{ description() }}</span>
+                    </div>
+                    <div class="logo-right span3">
+                        <img src="{{ article.logo }}" />
+                    </div>
+                {% endif %}
+            </a>
+        </div>
+{% endfor %}
+</div>
+<!--
 <ul class="work-list unstyled">
 {% for article in articles|sort(attribute='date')|reverse if article.category == "work" and not article.website == "false" %}
 {% macro description() %}
@@ -26,5 +58,5 @@
     </li>
 {% endfor %}
 </ul>
-
+-->
 {% endblock %}

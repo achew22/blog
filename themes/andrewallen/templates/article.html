@@ -21,6 +21,11 @@
       {{ article_date(article) }}
     </footer><!-- /.post-info -->
     <div class="entry-content">
+      {% if article.tldr %}
+        <blockquote class="tldr">
+          {{ article.tldr }}
+        </blockquote>
+      {% endif %}
       {{ article.content }}
     </div><!-- /.entry-content -->
 

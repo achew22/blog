@@ -65,12 +65,13 @@ hr {
         background-size: 100% 100%;//@social-icon-size @social-icon-size;
         width: @social-icon-size;
         height: @social-icon-size;
+
+        &:hover {
+            .transition(all, @codetransitiontime, linear);
+            opacity: 1;
+        }
     }
 
-    a:hover {
-        .transition(all, @codetransitiontime, linear);
-        opacity: 1;
-    }
 }
 
 /*** Syntax Hilighting **/
@@ -78,7 +79,7 @@ hr {
     border-spacing: 0px;
     //padding: 10px;
     .transition(all, @codetransitiontime, linear);
-    width: 40%;
+    min-width: 40%;
     margin-bottom: 40px;
 
     .linenos {
@@ -89,6 +90,9 @@ hr {
     }
 
     .code {
+        overflow: auto;
+        overflow-y: hidden;
+
         .transition(all, @codetransitiontime, linear);
         padding: 0 25px 0 5px;
         //background: fade(lighten(spin(@color2, 90), 70), 20);
@@ -96,10 +100,30 @@ hr {
     }
 }
 
-.highlighttable:hover {
+.entry-content > .highlight {
     .transition(all, @codetransitiontime, linear);
-    width: 100%;
+    border-spacing: 0px;
+
+    min-width: 40%;
+    margin-bottom: 40px;
+
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    background: @color1;
+
+    overflow: auto;
+    overflow-y: hidden;
 }
+
+.entry-content > .highlight:hover, .highlighttable:hover {
+    .transition(all, @codetransitiontime, linear);
+    min-width: 100%;
+}
+
+
 
 nav {
     padding-top: 65px;
@@ -119,12 +143,13 @@ h1 a, h2 a {
 a {
     .transition(all, @codetransitiontime, linear);
     color: fade(@white, 60);
+
+    &:hover {
+        .transition(all, @codetransitiontime, linear);
+        color: @white;
+    }
 }
 
-a:hover {
-    .transition(all, @codetransitiontime, linear);
-    color: @white;
-}
 
 p {
     text-align: justify;
@@ -148,6 +173,8 @@ h1, h2.striped {
     text-align: center;
 
     margin-bottom: 45px;
+    color: @color4;
+    border-bottom: solid fade(@color4, 13) 1px;
 
     a {
         line-height: 80px;
@@ -157,8 +184,6 @@ h1, h2.striped {
         margin: 0 auto;
     }
 
-    color: @color4;
-    border-bottom: solid fade(@color4, 13) 1px;
 }
 
 #content footer {
@@ -170,11 +195,12 @@ h1, h2.striped {
 #logo {
     a {
         font-size: 45px;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
-    a:hover {
-        text-decoration: none;
-    }
 
     .a1 {
         -moz-transform: rotate(-180deg) scale(-1, 1); /* FF3.5+ */
@@ -261,7 +287,31 @@ span.math {
     vertical-align: middle;
 }
 */
-.work-list {
+div.work-list {
+    width: 100%;
+    @client-work-list-img-padding: 20px;
+    @client-work-list-border-size: 10px;
+
+    .work-row {
+        @client-work-list-max-height: 100px;
+        height: @client-work-list-max-height + 10;
+        padding-bottom: 20px;
+
+        .logo-right {
+            // padding-left: @client-work-list-img-padding;
+            padding-left: -@client-work-list-border-size;
+            border-right: solid fade(@color4, 13) @client-work-list-border-size;
+        }
+
+        .logo-left {
+            // padding-left: @client-work-list-img-padding;
+            padding-left: -@client-work-list-border-size;
+            border-left: solid fade(@color4, 13) @client-work-list-border-size;
+        }
+    }
+}
+
+ul.work-list {
 
     .client {
         @client-work-list-max-height: 100px;
@@ -272,9 +322,10 @@ span.math {
             height: 100px;
             display: table-cell;
             vertical-align: middle;
-        }
-        span.description {
-            width: 360px;
+
+            &.description {
+                width: 360px;
+            }
         }
 
         a {
@@ -322,13 +373,25 @@ blockquote {
         font-size: 27.5px;
         font-weight: 300;
         line-height: 1.25;
+
+        &.attribution {
+            text-align: right;
+        }
     }
 
-    p.attribution {
-        text-align: right;
-    }
 }
 
 .project {
     margin-bottom: 40px;
+}
+
+.logo-header {
+    max-width: 250px;
+    max-height: 66px;
+}
+
+.entry-content {
+    h2 {
+        font-size: @baseFontSize * 1.5;
+    }
 }
