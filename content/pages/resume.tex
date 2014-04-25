@@ -393,12 +393,19 @@ Denver, CO 80237 USA}
 
 
 \begin{innerlist}
-
     \item[] {{ article.position|default("Contractor") }}
             {% if article.enddate %}
-                \hfill { {{ article.date.strftime("%B %Y") }} to {{ article.enddate.strftime("%B %Y") }} }
+                \hfill {
+                    {{ article.date|strftime('%B %Y') }}
+                    to
+                    {% if article.enddate is string %}
+                        Unicoded {{ article.enddate }}
+                    {% else %}
+                        {{ article.enddate|strftime('%B %Y') }}
+                    {% endif %}
+                }
             {% else %}
-                \hfill { {{ article.date.strftime("%B %Y") }} to Present }
+                \hfill { {{ article.date|strftime('%B %Y') }} to Present }
             {% endif %}
             \vspace{0.05cm}
     \begin{innerlist}
