@@ -6,8 +6,8 @@ Google
 :author: Andrew Z Allen
 :logo: /work/images/google.png
 :date: 2013-09-23
-:position: Contractor
-:languages: Python
+:position: Software Engineer
+:languages: JavaScript, Java, Python
 :workurl: http://www.google.com
 :status: published
 :web_description: Working on the payments team.
@@ -15,4 +15,4 @@ Google
 :resume: true
 :website: true
 
-Data
+At Google I work on tools facing internal consumers.
