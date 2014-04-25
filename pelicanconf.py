@@ -4,6 +4,7 @@
 AUTHOR = u"Andrew Z Allen"
 SITENAME = u"Andrew Z Allen"
 SITEURL = 'http://andrewzallen.com'
+SITEURL = ''
 RELATIVE_URLS = True
 TIMEZONE = 'America/Denver'
 TWITTER_USERNAME = 'achew22'
@@ -12,7 +13,7 @@ DISQUS_SITENAME = "achew22-blog"
 REVERSE_CATEGORY_ORDER = True
 LOCALE = "C"
 DEFAULT_PAGINATION = 4
-DEFAULT_DATE = (1989, 07, 17, 19, 07, 22)
+DEFAULT_DATE = (1989, 7, 17, 19, 7, 22)
 DEFAULT_LANG = 'en'
 
 
@@ -21,8 +22,6 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 # Static file list
 STATIC_PATHS = [
-    'images',
-    'work/images'
 ]
 
 # Don't generate PDFs yet
@@ -48,17 +47,32 @@ FILES_TO_COPY = (
 
 # Files not to copy
 IGNORE_FILES = [
-    'theme/css/*.less'
+    'theme/css/*.less',
+    'static/css/bootstrap'
 ]
 
 # Plugins
 PLUGIN_PATH = 'pelican-plugins'
+
+import sys
+sys.path.insert(0, "plugins")
+
+import preprocess_metainformation as preprocess_metainformation
+import run_script as run_script
+import static_generator as static_generator
+import impress_js as impress_js
+
 PLUGINS = [
     'assets',
+    #'code_include',
     'multi_part',
     'html_rst_directive',
-    'json',
-    #'pelican.plugins.related_posts'
+
+    preprocess_metainformation,
+    run_script,
+    static_generator,
+    impress_js,
+    #'pelican.plugins.related_posts',
 ]
 
 # Related posts config
@@ -95,7 +109,22 @@ TEMPLATE_PAGES = {
     'pages/resume.tex': 'resume.tex',
 }
 
+# Define useful filters
+def resume_format(value, format='%B %Y'):
+    print type(value), value
+    return value.strftime(format)
+
+def media_url(url, site_root):
+    if re.match("^https?://", "https://yahoo.com", re.IGNORECASE):
+        return url
+    else:
+        return "%s/%s" %(site_root, url)
+
 JINJA_EXTENSIONS = ['jinja2.ext.loopcontrols']
+JINJA_FILTERSS = {
+    "resume_format": resume_format,
+    "media_url": media_url,
+}
 
 SUMMARY_MAX_LENGTH = 100
 
