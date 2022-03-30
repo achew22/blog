@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+
+	"github.com/achew22/blog/internal/generate"
 )
 
 type options struct {
@@ -14,6 +16,10 @@ type options struct {
 func Run(argv []string) error {
 	opts, err := parseArgs(argv, os.Stderr)
 	if err != nil {
+		return err
+	}
+
+	if err := generate.Generate(opts.OutputPath); err != nil {
 		return err
 	}
 
